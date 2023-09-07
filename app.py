@@ -3,10 +3,10 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from database import Base, SneakerCollection, SneakerModel, SneakerBrand
 
-# Database configuration
+
 DATABASE_URL = "sqlite:///sneaker_collection.db"  
 
-# Create the database engine and session
+
 engine = create_engine(DATABASE_URL)
 Session = sessionmaker(bind=engine)
 session = Session()
