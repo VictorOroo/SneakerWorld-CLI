@@ -1,6 +1,9 @@
-from sqlalchemy import create_engine, Column, Integer, String, Float, ForeignKey
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, relationship
-from sqlalchemy.ext.declarative import declarative_base
+# from sqlalchemy.ext.declarative import declarative_base
+from app.models import Base, SneakerBrand, SneakerModel, SneakerCollection
+
+
 
 DATABASE_URL = "sqlite:///sneaker_collection.db"  
 
@@ -9,39 +12,39 @@ engine = create_engine(DATABASE_URL)
 Session = sessionmaker(bind=engine)
 session = Session()
 
-Base = declarative_base()
+# Base = declarative_base()
 
 # sneaker models
 
-class SneakerBrand(Base):
-    __tablename__ = 'sneaker_brand'
+# class SneakerBrand(Base):
+#     __tablename__ = 'sneaker_brand'
 
-    id = Column(Integer, primary_key=True)
-    name = Column(String, unique=True, nullable=False)
+#     id = Column(Integer, primary_key=True)
+#     name = Column(String, unique=True, nullable=False)
 
-    models = relationship('SneakerModel', back_populates='brand')
+#     models = relationship('SneakerModel', back_populates='brand')
 
-class SneakerModel(Base):
-    __tablename__ = 'sneaker_model'
+# class SneakerModel(Base):
+#     __tablename__ = 'sneaker_model'
 
-    id = Column(Integer, primary_key=True)
-    name = Column(String, nullable=False)
-    brand_id = Column(Integer, ForeignKey('sneaker_brand.id'), nullable=False)
+#     id = Column(Integer, primary_key=True)
+#     name = Column(String, nullable=False)
+#     brand_id = Column(Integer, ForeignKey('sneaker_brand.id'), nullable=False)
 
-    brand = relationship('SneakerBrand', back_populates='models')
-    collections = relationship('SneakerCollection', back_populates='model')
+#     brand = relationship('SneakerBrand', back_populates='models')
+#     collections = relationship('SneakerCollection', back_populates='model')
 
-class SneakerCollection(Base):
-    __tablename__ = 'sneaker_collection'
+# class SneakerCollection(Base):
+#     __tablename__ = 'sneaker_collection'
 
-    id = Column(Integer, primary_key=True)
-    size = Column(Integer, nullable=False)
-    colorway = Column(String, nullable=False)
-    purchase_date = Column(String, nullable=False)
-    purchase_price = Column(Float, nullable=False)
-    model_id = Column(Integer, ForeignKey('sneaker_model.id'), nullable=False)
+#     id = Column(Integer, primary_key=True)
+#     size = Column(Integer, nullable=False)
+#     colorway = Column(String, nullable=False)
+#     purchase_date = Column(String, nullable=False)
+#     purchase_price = Column(Float, nullable=False)
+#     model_id = Column(Integer, ForeignKey('sneaker_model.id'), nullable=False)
 
-    model = relationship('SneakerModel', back_populates='collections')
+#     model = relationship('SneakerModel', back_populates='collections')
 
 # this are the functions which will interact with the database
 

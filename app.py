@@ -1,7 +1,9 @@
 import click
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from database import Base, SneakerCollection, SneakerModel, SneakerBrand
+from app.models import Base, SneakerCollection, SneakerModel, SneakerBrand
+
+
 
 
 DATABASE_URL = "sqlite:///sneaker_collection.db"  
@@ -43,7 +45,7 @@ def view(sneaker_id):
         print(f"Size: {sneaker.size}")
         print(f"Colorway: {sneaker.colorway}")
         print(f"Purchase Date: {sneaker.purchase_date}")
-        print(f"Purchase Price: ${sneaker.purchase_price:.2f}")
+        print(f"Purchase Price: Ksh {sneaker.purchase_price:.2f}")
     else:
         print("Sneaker not found.")
 
