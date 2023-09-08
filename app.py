@@ -17,7 +17,7 @@ Base.metadata.create_all(engine)
 
 @click.group()
 def cli():
-    """SneakerWorld ."""
+    """SneakerWorld."""
     pass
 
 @cli.command()
