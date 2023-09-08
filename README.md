@@ -50,11 +50,11 @@ SneakerWorld offers the following features:
  - run this code to see all commands available python3 app.py --help
 
 ## Commands for the features
- - Browse Sneakers        python3 browse
- - view Sneaker Details   python3 view    <sneaker ID>
- - Add a New Sneaker      python3 add 
- - Delete a Sneaker       python3 delete  <sneaker ID>  
- - View all commands      python3 --help  <seaker  ID>
+ - Browse Sneakers        python3  browse
+ - view Sneaker Details   python3  view     sneaker ID 
+ - Add a New Sneaker      python3  add 
+ - Delete a Sneaker       python3  delete   sneaker ID 
+ - View all commands      python3  --help   seaker  ID
 ## Support and contact details 🙂
 
 To make a contribution to the code used or any suggestions you can click on the contact link and email me your suggestions.
