@@ -23,8 +23,8 @@ The following have been used on this project:
 - Click
 
 ## Project Setup
-Clone my repository into your machine(https://github.com/VictorOroo/SneakerWorld-CLI.git)
-install dependencies by running the following
+1. Clone my repository into your machine(https://github.com/VictorOroo/SneakerWorld-CLI.git)
+2. install dependencies by running the following
 - Pipenv install  
 - Pipenv shell
 - Pipenv install alembic
